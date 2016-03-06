@@ -18,8 +18,4 @@ class RemoveMagicFromMagicCommand(sublime_plugin.TextCommand):
             content = re.sub(replacement[0], replacement[1], content)
             self.view.replace(edit, region, content)
 
-class RunMagic(sublime_plugin.EventListener):
-    def on_pre_save(self, view):
-        view.run_command('remove_magic_from_magic')
-
 ##############################################################################
